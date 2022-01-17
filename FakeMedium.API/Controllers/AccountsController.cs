@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using FakeMedium.API.Models;
 using FakeMedium.DATA.Context;
 using FakeMedium.MODELS.DTO.Request.User;
 using FakeMedium.SERVICES.Abstract;
@@ -28,7 +27,7 @@ namespace FakeMedium.API.Controllers
         {
             Configuration = configuration;
             _context = context;
-            _userService = userService;
+            _userService = userService; 
         }
 
         [HttpGet("Login")]
@@ -91,7 +90,7 @@ namespace FakeMedium.API.Controllers
             return Ok(response);
         }
 
-        [HttpPost]
+        [HttpPost("Register/")]
         [AllowAnonymous]
         public IActionResult AddNewUser([FromBody]AddNewUserRequest request)
         {
